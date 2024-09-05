@@ -167,17 +167,20 @@ class BaseModel():
 
     for iter in range(self.opt.iteration):
       # Train for one iter
+      self.epoch=iter
       self.train_one_iter_er()
 
       print('Encoder training step: '+ str(iter) + '/' + str(self.opt.iteration))
 
     for iter in range(self.opt.iteration):
       # Train for one iter
+      self.epoch=iter
       self.train_one_iter_s()
 
       print('Superviser training step: '+ str(iter) + '/' + str(self.opt.iteration))
 
     for iter in range(self.opt.iteration):
+      self.epoch=iter
       # Train for one iter
       for kk in range(2):
         self.train_one_iter_g()
